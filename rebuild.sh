@@ -15,7 +15,7 @@ cd ..
 
 echo "### BUILD AOSP"
 source build/envsetup.sh
-lunch rk3399_box-userdebug
+lunch rk3399-userdebug
 make -j$(nproc)
 
 echo "### GENERATE IMAGES"
@@ -23,4 +23,3 @@ echo "### GENERATE IMAGES"
 cd rockdev
 #./mkupdate.sh
 ./android-gpt.sh
-cp /mnt/rockpi4-android9/rockdev/Image/gpt.img /media/psf/git/ && sync
