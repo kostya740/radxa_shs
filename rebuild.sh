@@ -19,7 +19,9 @@ lunch rk3399-userdebug
 make -j$(nproc)
 
 echo "### GENERATE IMAGES"
+[ ! -d "rockdev" ] && ln -s RKTools/linux/Linux_Pack_Firmware/rockdev rockdev
 ./mkimage.sh
 cd rockdev
+[ ! -d "rockdev" ] && ln -s Image-rk3399 Image
 #./mkupdate.sh
 ./android-gpt.sh
